@@ -57,18 +57,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
             SizedBox(height: 20),
 
             Expanded(
-              child: ListView.builder(
-                itemCount: tasks.length,
-                itemBuilder: (context, index) {
-                  return TaskCard(
-                    title: tasks[index]["title"]!,
-                    priority: tasks[index]["priority"]!,
-                    deadline: tasks[index]["deadline"]!,
-                  );
-                },
-              ),
-            ),
-
+                  child: ListView.builder(
+                    itemCount: tasks.length,
+                    itemBuilder: (context, index) {
+                      final task = tasks[index];
+                      return TaskCard(
+                        title: task["title"] ?? "No title",
+                        priority: task["priority"] ?? "Low",
+                        deadline: task["deadline"] ?? "No deadline",
+                      );
+                    },
+                  ),
+                )
           ],
         ),
       ),
