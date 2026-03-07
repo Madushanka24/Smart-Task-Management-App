@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import '../widgets/task_card.dart';
+import 'add_task_screen.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
+  @override
+  _DashboardScreenState createState() => _DashboardScreenState();
+}
 
-  // Sample tasks (later replaced by API data)
-  final List<Map<String, String>> tasks = [
+class _DashboardScreenState extends State<DashboardScreen> {
+
+  List<Map<String, String>> tasks = [
     {"title": "Finish Assignment", "priority": "High"},
     {"title": "Buy Groceries", "priority": "Medium"},
     {"title": "Call Client", "priority": "Low"},
   ];
+
+  void _addTask(String title, String priority){
+    setState(() {
+      tasks.add({"title": title, "priority": priority});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +51,6 @@ class DashboardScreen extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // Task list
             Expanded(
               child: ListView.builder(
                 itemCount: tasks.length,
@@ -58,7 +68,12 @@ class DashboardScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigate to Add Task screen later
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddTaskScreen(onAddTask: _addTask),
+            ),
+          );
         },
         child: Icon(Icons.add),
       ),
