@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(24),
@@ -15,7 +13,6 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               Text(
                 "TaskFlow",
                 style: TextStyle(
@@ -23,16 +20,12 @@ class LoginScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               SizedBox(height: 10),
-
               Text(
                 "Smart Task Manager",
                 style: TextStyle(fontSize: 16),
               ),
-
               SizedBox(height: 40),
-
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
@@ -40,9 +33,7 @@ class LoginScreen extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
-
               SizedBox(height: 20),
-
               TextField(
                 controller: passwordController,
                 obscureText: true,
@@ -51,24 +42,23 @@ class LoginScreen extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
-
               SizedBox(height: 30),
-
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/dashboard');
+                  },
                   child: Text("Login"),
                 ),
               ),
-
               SizedBox(height: 20),
-
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/register');
+                },
                 child: Text("Create Account"),
               )
-
             ],
           ),
         ),
