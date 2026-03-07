@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/task_card.dart';
 import 'add_task_screen.dart';
 import 'package:intl/intl.dart';
+import '../utils/notification_service.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -24,8 +25,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
       "deadline": DateFormat('yyyy-MM-dd').format(deadline),
     });
   });
-}
 
+  // Schedule notification
+  NotificationService.showNotification(
+    tasks.length, // unique id
+    "Task Reminder",
+    "Don't forget: $title",
+    deadline.subtract(Duration(hours: 1)), // 1 hour before deadline
+  );
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
