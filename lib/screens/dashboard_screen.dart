@@ -3,6 +3,7 @@ import '../widgets/task_card.dart';
 import 'add_task_screen.dart';
 import 'package:intl/intl.dart';
 import '../utils/notification_service.dart';
+import 'analytics_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     deadline.subtract(Duration(hours: 1)), // 1 hour before deadline
   );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +48,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
               Navigator.pushReplacementNamed(context, '/login');
             },
           ),
+          IconButton(
+  icon: Icon(Icons.analytics),
+  onPressed: () {
+
+    int completed = 0;
+    int pending = tasks.length;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => AnalyticsScreen(
+          completedTasks: completed,
+          pendingTasks: pending,
+        ),
+      ),
+    );
+
+  },
+),
         ],
       ),
       body: Padding(
