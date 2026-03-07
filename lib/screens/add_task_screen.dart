@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class AddTaskScreen extends StatefulWidget {
-  final Function(String, String) onAddTask;
+  final Function(String, String, DateTime) onAddTask;
 
   AddTaskScreen({required this.onAddTask});
 
@@ -13,6 +14,23 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
   final _titleController = TextEditingController();
   String _selectedPriority = "Low";
+  DateTime _selectedDate = DateTime.now();
+
+  // Function to pick date
+  _pickDate() async {
+    DateTime? date = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2100),
+    );
+
+    if (date != null) {
+      setState(() {
+        _selectedDate = date;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +72,30 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               ),
             ),
 
+            SizedBox(height: 20),
+
+            Row(
+              children: [
+                Text(
+                  "Deadline: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}",
+                  style: TextStyle(fontSize: 16),
+                ),
+                Spacer(),
+                TextButton(
+                  onPressed: _pickDate,
+                  child: Text("Select Date"),
+                ),
+              ],
+            ),
+
             SizedBox(height: 30),
 
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if(_titleController.text.isNotEmpty){
-                    widget.onAddTask(_titleController.text, _selectedPriority);
+                  if (_titleController.text.isNotEmpty) {
+                    widget.onAddTask(_titleController.text, _selectedPriority, _selectedDate);
                     Navigator.pop(context);
                   }
                 },

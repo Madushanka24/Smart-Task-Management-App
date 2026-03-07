@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/task_card.dart';
 import 'add_task_screen.dart';
+import 'package:intl/intl.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -15,11 +16,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
     {"title": "Call Client", "priority": "Low"},
   ];
 
-  void _addTask(String title, String priority){
-    setState(() {
-      tasks.add({"title": title, "priority": priority});
+  void _addTask(String title, String priority, DateTime deadline){
+  setState(() {
+    tasks.add({
+      "title": title,
+      "priority": priority,
+      "deadline": DateFormat('yyyy-MM-dd').format(deadline),
     });
-  }
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +63,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   return TaskCard(
                     title: tasks[index]["title"]!,
                     priority: tasks[index]["priority"]!,
+                    deadline: tasks[index]["deadline"]!,
                   );
                 },
               ),

@@ -4,8 +4,9 @@ class TaskCard extends StatelessWidget {
 
   final String title;
   final String priority;
+  final String deadline;
 
-  TaskCard({required this.title, required this.priority});
+  TaskCard({required this.title, required this.priority, required this.deadline});
 
   // Color based on priority
   Color getPriorityColor() {
@@ -27,6 +28,7 @@ class TaskCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 8),
       child: ListTile(
         title: Text(title),
+        subtitle: Text("Deadline: $deadline"),
         trailing: Container(
           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: BoxDecoration(
