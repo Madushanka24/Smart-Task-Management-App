@@ -10,13 +10,20 @@ class TaskFlowApp extends StatelessWidget {
     return MaterialApp(
       title: 'TaskFlow',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("TaskFlow"),
-        ),
-        body: Center(
-          child: Text("Smart Task Manager"),
-        ),
+      home: LoginScreen(),
+    );
+  }
+}
+
+class LoginScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("TaskFlow"),
+      ),
+      body: Center(
+        child: Text("Smart Task Manager"),
       ),
     );
   }
