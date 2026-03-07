@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
+import 'screens/dashboard_screen.dart';
 import 'utils/app_theme.dart';
 
 void main() {
@@ -14,7 +16,13 @@ class TaskFlowApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: LoginScreen(),
+      themeMode: ThemeMode.system, // follow system theme
+      initialRoute: '/login', // start with login
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
+        '/dashboard': (context) => DashboardScreen(),
+      },
     );
   }
 }
