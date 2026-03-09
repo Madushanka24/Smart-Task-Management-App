@@ -4,6 +4,7 @@ import 'add_task_screen.dart';
 import 'package:intl/intl.dart';
 import '../utils/notification_service.dart';
 import 'analytics_screen.dart';
+import '../services/api_service.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -35,6 +36,24 @@ class _DashboardScreenState extends State<DashboardScreen> {
     deadline.subtract(Duration(hours: 1)), // 1 hour before deadline
   );
   }
+
+  @override
+void initState() {
+  super.initState();
+  loadTasks();
+}
+
+void loadTasks() async {
+  final data = await ApiService.getTasks();
+
+  setState(() {
+    tasks = List<Map<String,String>>.from(data.map((task) => {
+      "title": task["title"],
+      "priority": task["priority"],
+      "deadline": task["deadline"]
+    }));
+  });
+}
 
   @override
   Widget build(BuildContext context) {
