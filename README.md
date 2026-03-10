@@ -3,6 +3,7 @@ Overview
 
 Smart Task Manager is a full-stack mobile application designed to help users manage tasks efficiently. Built with Flutter for the frontend and Spring Boot + PostgreSQL for the backend, the app offers a modern productivity experience similar to popular task management tools.
 
+
 Key Features:
 
 User Authentication with JWT (secure login and registration)
@@ -19,7 +20,10 @@ Dark mode support
 
 Full backend integration with REST APIs and PostgreSQL database
 
+
+
 Frontend (Flutter)
+
 
 Technologies:
 
@@ -32,6 +36,7 @@ Local storage for JWT using flutter_secure_storage
 Analytics charts using fl_chart
 
 Local notifications with flutter_local_notifications
+
 
 User Experience:
 
@@ -46,6 +51,7 @@ Add deadlines for tasks and receive timely reminders
 Visual analytics to track productivity
 
 Modern UI with dark mode support
+
 
 Running the Frontend:
 
@@ -70,6 +76,7 @@ Spring Data JPA for database access
 
 PostgreSQL database
 
+
 Backend Features:
 
 Secure user registration and login with JWT
@@ -80,6 +87,7 @@ Data persistence in PostgreSQL
 
 Cross-Origin support for frontend communication
 
+
 Running the Backend:
 
 Set up PostgreSQL database
@@ -89,6 +97,7 @@ Configure database credentials in Spring Boot application.properties
 Run Spring Boot application with Maven
 
 Use Postman to test APIs (register, login, add task, get tasks)
+
 
 Benefits & Highlights
 
