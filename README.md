@@ -1,42 +1,36 @@
 Smart Task Manager App
-Overview
 
-Smart Task Manager is a full-stack mobile application designed to help users manage tasks efficiently. Built with Flutter for the frontend and Spring Boot + PostgreSQL for the backend, the app offers a modern productivity experience similar to popular task management tools.
+Smart Task Manager is a full-stack mobile application that helps users manage tasks efficiently. Built with Flutter for the frontend and Spring Boot + PostgreSQL for the backend, it offers a modern productivity experience similar to popular task management tools.
 
+🔑 Key Features
 
-Key Features:
+User Authentication: Secure login and registration using JWT
 
-User Authentication with JWT (secure login and registration)
+Task Management: Add, edit, delete, and reorder tasks (Trello-style drag-and-drop)
 
-Add, edit, delete, and reorder tasks (Trello-style drag-and-drop)
+Task Priorities: High, Medium, Low
 
-Task priorities: High, Medium, Low
+Deadlines: Set deadlines with a date picker and receive local notifications
 
-Deadlines with Date Picker and local notifications
+Analytics Dashboard: Visualize completed vs pending tasks
 
-Analytics dashboard displaying completed vs pending tasks
+Dark Mode Support
 
-Dark mode support
+Full Backend Integration: REST APIs with PostgreSQL
 
-Full backend integration with REST APIs and PostgreSQL database
+📱 Frontend (Flutter)
 
-
-
-Frontend (Flutter)
-
-
-Technologies:
+Technologies Used:
 
 Flutter & Dart
 
 REST API integration using HTTP
 
-Local storage for JWT using flutter_secure_storage
+Secure local storage with flutter_secure_storage
 
-Analytics charts using fl_chart
+Analytics charts with fl_chart
 
-Local notifications with flutter_local_notifications
-
+Local notifications using flutter_local_notifications
 
 User Experience:
 
@@ -46,12 +40,11 @@ Interactive dashboard with tasks and priorities
 
 Drag-and-drop to reorder tasks by importance
 
-Add deadlines for tasks and receive timely reminders
+Add deadlines and receive timely reminders
 
 Visual analytics to track productivity
 
 Modern UI with dark mode support
-
 
 Running the Frontend:
 
@@ -61,45 +54,41 @@ Run flutter pub get to install dependencies
 
 Launch the app on an emulator or physical device using flutter run
 
+⚙️ Backend (Spring Boot + PostgreSQL)
 
+Repository: Smart Task Manager Backend
 
-Backend (Spring Boot + PostgreSQL)
-https://github.com/Madushanka24/Smart-Task-Management-App-Backend
-
-Technologies:
+Technologies Used:
 
 Spring Boot
 
 Spring Security + JWT authentication
 
-Spring Data JPA for database access
+Spring Data JPA
 
-PostgreSQL database
-
+PostgreSQL
 
 Backend Features:
 
 Secure user registration and login with JWT
 
-CRUD APIs for tasks linked to users
+CRUD APIs for user-linked tasks
 
 Data persistence in PostgreSQL
 
-Cross-Origin support for frontend communication
-
+CORS support for frontend communication
 
 Running the Backend:
 
 Set up PostgreSQL database
 
-Configure database credentials in Spring Boot application.properties
+Configure database credentials in application.properties
 
 Run Spring Boot application with Maven
 
-Use Postman to test APIs (register, login, add task, get tasks)
+Test APIs using Postman (register, login, add task, get tasks)
 
-
-Benefits & Highlights
+🎯 Benefits & Highlights
 
 Full-stack mobile application experience
 
@@ -107,11 +96,17 @@ Real-world features like authentication, notifications, deadlines, analytics, an
 
 Production-ready architecture for both frontend and backend
 
-Suitable for portfolio, internships, or demonstrating full-stack development skills
+Ideal for portfolios, internships, or demonstrating full-stack development skills
 
-Screen Video
+🎬 Demo Video
 
 https://github.com/user-attachments/assets/cf340beb-2bee-48cc-b3ac-d6c2a292a9f8
 
 
-This Smart Task Manager App is a portfolio-ready, professional project showcasing mobile, backend, and database development skills, with modern features and full-stack integration.
+💻 Skills Demonstrated
+
+Frontend: Flutter, Dart, REST API integration, local storage, charts, notifications
+
+Backend: Spring Boot, Spring Security, JWT, PostgreSQL, JPA
+
+Full-Stack: Secure authentication, CRUD operations, responsive UI/UX, real-world app features
